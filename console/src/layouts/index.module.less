@@ -14,7 +14,28 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f9f8f4;
+  background: #2657C9;
+
+  /* Text buttons (Docs / FAQ / GitHub / Changelog) */
+  :global(.qwenpaw-btn-text),
+  :global(.ant-btn-text) {
+    color: rgba(255, 255, 255, 0.85) !important;
+
+    &:hover {
+      color: #fff !important;
+      background: rgba(255, 255, 255, 0.12) !important;
+    }
+
+    .anticon,
+    svg {
+      color: inherit !important;
+    }
+  }
+
+  /* Fallback: any icon or text directly inside header */
+  :global(.anticon) {
+    color: rgba(255, 255, 255, 0.85);
+  }
 }
 
 .headerTitle {
@@ -24,11 +45,12 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  color: #fff;
 }
 
 // ─── Sidebar ─────────────────────────────────────────────────────────────────
 .sider {
-  background: #f9f8f4 !important;
+  background: #F7F8FA !important;
   overflow: auto;
   height: calc(100vh - 64px);
   padding: 0 16px;
@@ -61,7 +83,7 @@
     position: sticky;
     top: 0;
     z-index: 10;
-    background: #f9f8f4;
+    background: #F7F8FA;
     margin-bottom: 12px;
   }
 
@@ -129,7 +151,7 @@
 
   :global {
     .qwenpaw-menu {
-      background: #f9f8f4 !important;
+      background: #F7F8FA !important;
       border-inline-end: 0 !important;
     }
 
@@ -232,8 +254,8 @@
 
     /* Selected item */
     .qwenpaw-menu-item-selected {
-      background: rgba(255, 127, 22, 0.5) !important;
-      color: #ff7f16 !important;
+      background: rgba(38, 87, 201, 0.5) !important;
+      color: #2657C9 !important;
     }
   }
 }
@@ -261,12 +283,12 @@
   height: 0px;
   transform: rotate(90deg);
   z-index: 4;
-  border-top: 1px solid rgba(234, 232, 231, 1);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .versionBadge {
   font-size: 12px;
-  color: #1a171673;
+  color: rgba(255, 255, 255, 0.7);
   font-weight: 600;
   line-height: 1;
   position: relative;
@@ -283,7 +305,7 @@
 
 .collapseBtn {
   margin: auto;
-  color: #ff7f16;
+  color: #2657C9;
 }
 
 // ─── Auth actions (account + logout) ──────────────────────────────────────────
@@ -332,7 +354,7 @@
 
   &:hover {
     background: rgba(0, 0, 0, 0.06) !important;
-    color: #ff7f16 !important;
+    color: #2657C9 !important;
   }
 }
 
@@ -444,11 +466,11 @@
   font-weight: 500;
   line-height: 64.78px;
   letter-spacing: normal;
-  color: #ff7f16;
+  color: #2657C9;
 }
 
 .updateModalTitle {
-  color: #ff7f16;
+  color: #2657C9;
 }
 
 .updateModalBody {
@@ -467,19 +489,19 @@
 }
 
 .updateViewReleasesBtn {
-  background: #ff7f16 !important;
-  border-color: #ff7f16 !important;
+  background: #2657C9 !important;
+  border-color: #2657C9 !important;
   color: #fff !important;
 
   &:hover {
-    background: #d45b0a !important;
-    border-color: #d45b0a !important;
+    background: #1a4096 !important;
+    border-color: #1a4096 !important;
   }
 }
 
 .updateModalPrimaryBtn {
-  background: #ff7f16;
-  border-color: #ff7f16;
+  background: #2657C9;
+  border-color: #2657C9;
 }
 
 // ─── Code block inside update modal ──────────────────────────────────────────
@@ -535,18 +557,18 @@
 /* ─── Dark mode overrides ─────────────────────────────────────────────────── */
 :global(.dark-mode) {
   .header {
-    background: #1a1a1a !important;
-    border-bottom-color: rgba(255, 255, 255, 0.08) !important;
-    color: rgba(255, 255, 255, 0.85);
+    background: #2657C9 !important;
+    border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+    color: #fff;
 
     /* Text buttons (Docs / FAQ / GitHub / Changelog) */
     :global(.qwenpaw-btn-text),
     :global(.ant-btn-text) {
-      color: rgba(255, 255, 255, 0.75) !important;
+      color: rgba(255, 255, 255, 0.85) !important;
 
       &:hover {
         color: #fff !important;
-        background: rgba(255, 255, 255, 0.08) !important;
+        background: rgba(255, 255, 255, 0.12) !important;
       }
 
       .anticon,
@@ -557,12 +579,12 @@
 
     /* Fallback: any icon or text directly inside header */
     :global(.anticon) {
-      color: rgba(255, 255, 255, 0.75);
+      color: rgba(255, 255, 255, 0.85);
     }
   }
 
   .headerTitle {
-    color: rgba(255, 255, 255, 0.85);
+    color: #fff;
   }
 
   .sider {
@@ -575,11 +597,11 @@
   }
 
   .versionBadge {
-    color: #ff7f16;
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .collapseBtn {
-    color: #ff7f16;
+    color: #2657C9;
   }
 
   .authActions {
@@ -600,7 +622,7 @@
 
     &:hover {
       background: rgba(255, 255, 255, 0.08);
-      color: #ff7f16;
+      color: #2657C9;
     }
   }
 

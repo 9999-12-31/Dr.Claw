@@ -4,11 +4,11 @@ body {
   overflow: hidden;
   margin: 0;
   padding: 0;
-  background: #f9f8f4;
+  background: #ffffff;
 }
 
 .qwenpaw-layout {
-  background: #f9f8f4;
+  background: #ffffff;
 }
 
 /* ─── Dark mode global token overrides ─────────────────────────────────────── */
@@ -182,8 +182,8 @@ html.dark-mode .ant-pagination .ant-pagination-item a {
 
 html.dark-mode .qwenpaw-pagination .qwenpaw-pagination-item-active,
 html.dark-mode .ant-pagination .ant-pagination-item-active {
-  background: #ff7f16 !important;
-  border-color: #ff7f16 !important;
+  background: #2657C9 !important;
+  border-color: #2657C9 !important;
 }
 
 html.dark-mode .qwenpaw-pagination .qwenpaw-pagination-item-active a,
@@ -210,7 +210,7 @@ html.dark-mode .qwenpaw-table-column-sorter-up.active,
 html.dark-mode .qwenpaw-table-column-sorter-down.active,
 html.dark-mode .ant-table-column-sorter-up.active,
 html.dark-mode .ant-table-column-sorter-down.active {
-  color: #ff7f16 !important;
+  color: #2657C9 !important;
 }
 
 /* Checkbox in table */
@@ -222,8 +222,8 @@ html.dark-mode .ant-checkbox-inner {
 
 html.dark-mode .qwenpaw-checkbox-checked .qwenpaw-checkbox-inner,
 html.dark-mode .ant-checkbox-checked .ant-checkbox-inner {
-  background: #ff7f16 !important;
-  border-color: #ff7f16 !important;
+  background: #2657C9 !important;
+  border-color: #2657C9 !important;
 }
 
 /* Page titles (h1) */
@@ -311,7 +311,7 @@ html.dark-mode .ant-select-item-option-active {
 html.dark-mode .qwenpaw-select-item-option-selected,
 html.dark-mode .ant-select-item-option-selected {
   background: rgba(97, 92, 237, 0.2) !important;
-  color: #ff7f16 !important;
+  color: #2657C9 !important;
 }
 
 /* Form labels */
@@ -392,7 +392,7 @@ html.dark-mode
   .ant-picker-time-panel-cell-selected
   .ant-picker-time-panel-cell-inner {
   background: rgba(97, 92, 237, 0.2) !important;
-  color: #ff7f16 !important;
+  color: #2657C9 !important;
 }
 
 /* DatePicker / RangePicker calendar panel */
@@ -462,7 +462,7 @@ html.dark-mode .ant-picker-cell-disabled {
 /* Today marker */
 html.dark-mode .qwenpaw-picker-cell-today .qwenpaw-picker-cell-inner::before,
 html.dark-mode .ant-picker-cell-today .ant-picker-cell-inner::before {
-  border-color: #ff7f16 !important;
+  border-color: #2657C9 !important;
 }
 
 /* Selected start/end cell */
@@ -472,7 +472,7 @@ html.dark-mode .qwenpaw-picker-cell-range-start .qwenpaw-picker-cell-inner,
 html.dark-mode .ant-picker-cell-range-start .ant-picker-cell-inner,
 html.dark-mode .qwenpaw-picker-cell-range-end .qwenpaw-picker-cell-inner,
 html.dark-mode .ant-picker-cell-range-end .ant-picker-cell-inner {
-  background: #ff7f16 !important;
+  background: #2657C9 !important;
   color: #fff !important;
 }
 
@@ -498,7 +498,7 @@ html.dark-mode
 html.dark-mode
   .qwenpaw-picker-cell-in-view.qwenpaw-picker-cell-range-hover-end::after,
 html.dark-mode .ant-picker-cell-in-view.ant-picker-cell-range-hover-end::after {
-  border-color: #ff7f16 !important;
+  border-color: #2657C9 !important;
 }
 
 /* Panel footer (OK button area) */
@@ -510,7 +510,7 @@ html.dark-mode .ant-picker-footer {
 
 html.dark-mode .qwenpaw-picker-today-btn,
 html.dark-mode .ant-picker-today-btn {
-  color: #ff7f16 !important;
+  color: #2657C9 !important;
 }
 
 /* Divider between two panels in RangePicker */
@@ -660,12 +660,12 @@ html.dark-mode .ant-slider-rail {
 
 html.dark-mode .qwenpaw-slider-track,
 html.dark-mode .ant-slider-track {
-  background-color: #ff7f16 !important;
+  background-color: #2657C9 !important;
 }
 
 html.dark-mode .qwenpaw-slider-mark-text,
 html.dark-mode .ant-slider-mark-text {
-  color: #ff7f16 !important;
+  color: #2657C9 !important;
 }
 
 html.dark-mode .qwenpaw-form-item-label > label .qwenpaw-form-item-tooltip,
@@ -675,7 +675,7 @@ html.dark-mode .ant-form-item-label > label .ant-form-item-tooltip {
 
 html.dark-mode .qwenpaw-slider-handle::after,
 html.dark-mode .ant-slider-handle::after {
-  box-shadow: 0 0 0 2px #ff7f16 !important;
+  box-shadow: 0 0 0 2px #2657C9 !important;
   background-color: #1f1f1f !important;
 }
 
@@ -784,7 +784,7 @@ html.dark-mode [class*="chat-anywhere"] [class*="message"] code {
 }
 
 html.dark-mode [class*="chat-anywhere"] [class*="message"] a {
-  color: #ff7f16 !important;
+  color: #2657C9 !important;
 }
 
 #root {
@@ -955,6 +955,18 @@ html.dark-mode .qwenpaw-sender-content {
 [class*="default-header-right"] > * {
   margin-right: auto !important;
   margin-left: 0 !important;
+}
+
+/* ─── Force primary button text color to white ─────────────────────────────── */
+.ant-btn-primary,
+.qwenpaw-btn-primary {
+  color: #fff !important;
+}
+
+/* Dark mode still keeps white text */
+html.dark-mode .ant-btn-primary,
+html.dark-mode .qwenpaw-btn-primary {
+  color: #fff !important;
 }
 
 /* ─── Global disabled button styles ────────────────────────────────────────── */

@@ -1016,7 +1016,7 @@ export function ChannelDrawer({
               window.open(finalUrl, "_blank");
             }}
             className={styles.dingtalkDocBtn}
-            style={{ color: "#FF7F16" }}
+            style={{ color: "#2657C9" }}
           >
             {label} Doc
           </Button>
@@ -1030,7 +1030,7 @@ export function ChannelDrawer({
             window.open(TWILIO_CONSOLE_URL, "_blank", "noopener,noreferrer")
           }
           className={styles.dingtalkDocBtn}
-          style={{ color: "#FF7F16" }}
+          style={{ color: "#2657C9" }}
         >
           {t("channels.voiceSetupLink")}
         </Button>

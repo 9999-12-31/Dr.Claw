@@ -23,14 +23,14 @@
   background: rgba(43, 18, 0, 0.04);
   border: 1px solid rgba(26, 23, 22, 0.08);
   border-radius: 8px;
-  color: #f07e26;
+  color: #2657C9;
   cursor: default;
   margin-bottom: 12px;
   transition: all 0.2s ease;
 
   &:hover {
-    background: rgba(43, 18, 0, 0.08);
-    border-color: rgba(240, 126, 38, 0.3);
+    background: rgba(38, 87, 201, 0.08);
+    border-color: rgba(38, 87, 201, 0.3);
   }
 }
 
@@ -63,7 +63,7 @@
   gap: 2px;
   font-size: 12px;
   font-weight: 500;
-  color: #f07e26;
+  color: #2657C9;
   background: none;
   border: none;
   padding: 0;
@@ -72,7 +72,7 @@
   flex-shrink: 0;
 
   &:hover {
-    color: #d96c18;
+    color: #1a4096;
   }
 }
 
@@ -138,7 +138,7 @@
 
   svg {
     flex-shrink: 0;
-    color: #f07e26;
+    color: #2657C9;
     opacity: 0.85;
   }
 
@@ -193,10 +193,10 @@
         background: rgba(43, 18, 0, 0.06) !important;
 
         .agentOptionIcon {
-          background: linear-gradient(135deg, #f07e26 0%, #f5a05a 100%);
+          background: linear-gradient(135deg, #2657C9 0%, #4a78d8 100%);
           border-color: transparent;
           color: #ffffff;
-          box-shadow: 0 2px 8px rgba(240, 126, 38, 0.4);
+          box-shadow: 0 2px 8px rgba(38, 87, 201, 0.4);
         }
       }
     }
@@ -215,10 +215,10 @@
         background: rgba(43, 18, 0, 0.06) !important;
 
         .agentOptionIcon {
-          background: linear-gradient(135deg, #f07e26 0%, #f5a05a 100%);
+          background: linear-gradient(135deg, #2657C9 0%, #4a78d8 100%);
           border-color: transparent;
           color: #ffffff;
-          box-shadow: 0 2px 8px rgba(240, 126, 38, 0.4);
+          box-shadow: 0 2px 8px rgba(38, 87, 201, 0.4);
         }
       }
     }
@@ -250,17 +250,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #fff8f2 0%, #fff0e5 100%);
-  border: 1px solid rgba(240, 126, 38, 0.15);
+  background: linear-gradient(135deg, #f2f6fc 0%, #e8f0fa 100%);
+  border: 1px solid rgba(38, 87, 201, 0.15);
   border-radius: 8px;
-  color: #f07e26;
+  color: #2657C9;
   transition: all 0.2s ease;
 
   .agentOption:hover & {
-    background: linear-gradient(135deg, #ffe9d4 0%, #fff0e5 100%);
-    border-color: rgba(240, 126, 38, 0.3);
-    color: #f07e26;
-    box-shadow: 0 2px 6px rgba(240, 126, 38, 0.15);
+    background: linear-gradient(135deg, #e8f0fa 0%, #e8f0fa 100%);
+    border-color: rgba(38, 87, 201, 0.3);
+    color: #2657C9;
+    box-shadow: 0 2px 6px rgba(38, 87, 201, 0.15);
   }
 }
 
@@ -292,8 +292,14 @@
 
 .activeIndicator {
   flex-shrink: 0;
-  color: #f07e26;
+  color: #2657C9;
   animation: fadeIn 0.3s ease;
+  transform-origin: center;
+}
+
+// Make the checkmark more visible and aligned
+.activeIndicator svg {
+  display: block;
 }
 
 @keyframes fadeIn {
@@ -319,10 +325,10 @@
 .agentOptionId {
   font-size: 10px;
   font-family: "SF Mono", "Consolas", "Monaco", monospace;
-  color: rgba(240, 126, 38, 0.45);
+  color: rgba(38, 87, 201, 0.35);
   letter-spacing: 0.3px;
   padding-top: 4px;
-  border-top: 1px solid rgba(240, 126, 38, 0.08);
+  border-top: 1px solid rgba(38, 87, 201, 0.08);
 }
 
 // ─── Dark mode overrides ───────────────────────────────────────────────────────
@@ -335,11 +341,11 @@
   .agentSelectorCollapsed {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.1);
-    color: #f07e26;
+    color: #2657C9;
 
     &:hover {
       background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(240, 126, 38, 0.4);
+      border-color: rgba(38, 87, 201, 0.4);
     }
   }
 
@@ -397,16 +403,16 @@
     color: rgba(255, 255, 255, 0.9);
 
     svg {
-      color: #f5a05a;
+      color: #2657C9;
       opacity: 0.9;
     }
   }
 
   .managementLink {
-    color: #f5a05a;
+    color: #4a78d8;
 
     &:hover {
-      color: #f07e26;
+      color: #2657C9;
     }
   }
 
@@ -426,10 +432,10 @@
           background: rgba(255, 255, 255, 0.08) !important;
 
           .agentOptionIcon {
-            background: linear-gradient(135deg, #f07e26 0%, #f5a05a 100%);
+            background: linear-gradient(135deg, #2657C9 0%, #4a78d8 100%);
             border-color: transparent;
             color: #ffffff;
-            box-shadow: 0 2px 8px rgba(240, 126, 38, 0.5);
+            box-shadow: 0 2px 8px rgba(38, 87, 201, 0.5);
           }
         }
       }
@@ -439,21 +445,21 @@
   .agentOptionIcon {
     background: linear-gradient(
       135deg,
-      rgba(240, 126, 38, 0.15) 0%,
-      rgba(240, 126, 38, 0.08) 100%
+      rgba(38, 87, 201, 0.15) 0%,
+      rgba(38, 87, 201, 0.08) 100%
     );
-    border-color: rgba(245, 160, 90, 0.2);
-    color: #f5a05a;
+    border-color: rgba(74, 120, 216, 0.2);
+    color: #4a78d8;
 
     .agentOption:hover & {
       background: linear-gradient(
         135deg,
-        rgba(240, 126, 38, 0.3) 0%,
-        rgba(240, 126, 38, 0.15) 100%
+        rgba(38, 87, 201, 0.3) 0%,
+        rgba(38, 87, 201, 0.15) 100%
       );
-      border-color: rgba(245, 160, 90, 0.4);
-      color: #f5b87a;
-      box-shadow: 0 2px 8px rgba(240, 126, 38, 0.3);
+      border-color: rgba(74, 120, 216, 0.4);
+      color: #2657C9;
+      box-shadow: 0 2px 8px rgba(38, 87, 201, 0.3);
     }
   }
 
@@ -466,7 +472,7 @@
   }
 
   .agentOptionId {
-    color: rgba(245, 160, 90, 0.5);
-    border-top-color: rgba(245, 160, 90, 0.12);
+    color: rgba(74, 120, 216, 0.4);
+    border-top-color: rgba(74, 120, 216, 0.12);
   }
 }
