@@ -20,7 +20,7 @@ on:
 
 env:
   GITHUB_REGISTRY: ghcr.io
-  IMAGE: ${{ github.repository_owner }}/dr.claw
+  IMAGE: ${{ github.repository_owner }}/drclaw
 
 jobs:
   build-and-push:
