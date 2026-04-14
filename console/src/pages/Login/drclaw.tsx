@@ -10,7 +10,7 @@ import {
   EyeInvisibleOutlined,
 } from "@ant-design/icons";
 import { authApi } from "../../api/modules/auth";
-import { setAuthToken } from "../../api/config";
+import { setAuthToken, setUsername } from "../../api/config";
 import { useTheme } from "../../contexts/ThemeContext";
 import loginImage from "@/assets/images/login.png";
 
@@ -69,6 +69,7 @@ export default function LoginPage() {
         const res = await authApi.register(values.username, values.password);
         if (res.token) {
           setAuthToken(res.token);
+          setUsername(res.username);
           message.success(t("login.registerSuccess"));
           navigate(redirect, { replace: true });
         }
@@ -76,6 +77,7 @@ export default function LoginPage() {
         const res = await authApi.login(values.username, values.password);
         if (res.token) {
           setAuthToken(res.token);
+          setUsername(res.username);
           navigate(redirect, { replace: true });
         } else {
           message.info(t("login.authNotEnabled"));

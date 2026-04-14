@@ -1,4 +1,4 @@
-import { Layout, Space, Badge, Spin, Tooltip } from "antd";
+import { Layout, Space, Badge, Spin } from "antd";
 import LanguageSwitcher from "../components/LanguageSwitcher/index";
 import ThemeToggleButton from "../components/ThemeToggleButton";
 import { useTranslation } from "react-i18next";
@@ -6,23 +6,26 @@ import { Button, Modal } from "@agentscope-ai/design";
 import styles from "./index.module.less";
 import api from "../api";
 import {
-  GITHUB_URL,
-  getDocsUrl,
-  getFaqUrl,
-  getReleaseNotesUrl,
   PYPI_URL,
   ONE_HOUR_MS,
   UPDATE_MD,
   isStableVersion,
   compareVersions,
+  getReleaseNotesUrl,
 } from "./constants";
+import { getUsername } from "../api/config";
 import { useTheme } from "../contexts/ThemeContext";
 import { useState, useEffect } from "react";
 import logoDark from "@/assets/logo/logo-dark.png";
 import logoLight from "@/assets/logo/logo-light.png";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { CopyOutlined, CheckOutlined, TagOutlined } from "@ant-design/icons";
+import {
+  CopyOutlined,
+  CheckOutlined,
+  TagOutlined,
+  UserOutlined,
+} from "@ant-design/icons";
 
 const { Header: AntHeader } = Layout;
 
@@ -58,6 +61,11 @@ export default function Header() {
   const [latestVersion, setLatestVersion] = useState<string>("");
   const [updateModalOpen, setUpdateModalOpen] = useState(false);
   const [updateMarkdown, setUpdateMarkdown] = useState<string>("");
+  const [username, setUsername] = useState<string | null>(getUsername());
+
+  useEffect(() => {
+    setUsername(getUsername());
+  }, []);
 
   useEffect(() => {
     api
@@ -181,35 +189,19 @@ export default function Header() {
           )}
         </div>
         <Space size="middle">
-          <Tooltip title={t("header.changelog")}>
-            <Button
-              type="text"
-              onClick={() => handleNavClick(getReleaseNotesUrl(i18n.language))}
+          {username && (
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: 6,
+                color: "rgba(255, 255, 255, 0.9)",
+              }}
             >
-              {t("header.changelog")}
-            </Button>
-          </Tooltip>
-          <Tooltip title={t("header.docs")}>
-            <Button
-              type="text"
-              onClick={() => handleNavClick(getDocsUrl(i18n.language))}
-            >
-              {t("header.docs")}
-            </Button>
-          </Tooltip>
-          <Tooltip title={t("header.faq")}>
-            <Button
-              type="text"
-              onClick={() => handleNavClick(getFaqUrl(i18n.language))}
-            >
-              {t("header.faq")}
-            </Button>
-          </Tooltip>
-          <Tooltip title={t("header.github")}>
-            <Button type="text" onClick={() => handleNavClick(GITHUB_URL)}>
-              {t("header.github")}
-            </Button>
-          </Tooltip>
+              <UserOutlined />
+              <span style={{ fontSize: 14, fontWeight: 500 }}>{username}</span>
+            </div>
+          )}
           <div className={styles.headerDivider} />
           <LanguageSwitcher />
           <ThemeToggleButton />

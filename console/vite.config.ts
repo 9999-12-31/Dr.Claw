@@ -39,7 +39,7 @@ export default defineConfig(({ mode }) => {
           target: "http://10.110.177.130:8088",
           changeOrigin: true,
         },
-      },      
+      },
     },
     optimizeDeps: {
       include: ["diff"],
