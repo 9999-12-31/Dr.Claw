@@ -18,6 +18,8 @@ import {
 } from "./constants";
 import { useTheme } from "../contexts/ThemeContext";
 import { useState, useEffect } from "react";
+import logoDark from "@/assets/logo/logo-dark.png";
+import logoLight from "@/assets/logo/logo-light.png";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { CopyOutlined, CheckOutlined, TagOutlined } from "@ant-design/icons";
@@ -154,11 +156,7 @@ export default function Header() {
       <AntHeader className={styles.header}>
         <div className={styles.logoWrapper}>
           <img
-            src={
-              isDark
-                ? `https://gw.alicdn.com/imgextra/i4/O1CN01L7e39724RlGeJYJ7l_!!6000000007388-55-tps-771-132.svg`
-                : "https://gw.alicdn.com/imgextra/i1/O1CN01sens5C1TuwioeGexL_!!6000000002443-55-tps-771-132.svg"
-            }
+            src={isDark ? logoDark : logoLight}
             alt="QwenPaw"
             className={styles.logoImg}
           />

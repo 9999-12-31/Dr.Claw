@@ -34,6 +34,12 @@ export default defineConfig(({ mode }) => {
     server: {
       host: "0.0.0.0",
       port: 5173,
+      proxy: {
+        "/api": {
+          target: "http://10.110.177.130:8088",
+          changeOrigin: true,
+        },
+      },      
     },
     optimizeDeps: {
       include: ["diff"],
