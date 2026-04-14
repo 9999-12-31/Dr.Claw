@@ -18,7 +18,7 @@ import "dayjs/locale/ru";
 dayjs.extend(relativeTime);
 import MainLayout from "./layouts/MainLayout";
 import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
-import LoginPage from "./pages/Login";
+import LoginPage from "./pages/Login/drclaw";
 import { authApi } from "./api/modules/auth";
 import { languageApi } from "./api/modules/language";
 import { getApiUrl, getApiToken, clearAuthToken } from "./api/config";
