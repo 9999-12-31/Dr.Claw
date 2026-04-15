@@ -114,8 +114,6 @@ WORKDIR ${WORKSPACE_DIR}
 COPY --from=python-builder /app/venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
 
-WORKDIR ${WORKSPACE_DIR}
-
 # Init working dir with default config.json and HEARTBEAT.md (build time).
 RUN qwenpaw init --defaults --accept-security
 
