@@ -89,7 +89,7 @@ COPY src ./src
 # Inject console dist from build stage (repo does not commit dist).
 COPY --from=console-builder /app/console/dist/ ./src/qwenpaw/console/
 RUN pip install --no-cache-dir \
-    .[ollama,llamacpp,whisper] \
+    .[ollama,whisper] \
     pypdf \
     pdfplumber \
     reportlab \
