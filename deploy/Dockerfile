@@ -26,7 +26,7 @@ ENV QWENPAW_ENABLED_CHANNELS=${QWENPAW_ENABLED_CHANNELS}
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y --fix-missing \
+RUN apt-get update && apt-get install -y --no-install-recommends --fix-missing \
     curl \
     python3 \
     python3-pip \
@@ -36,8 +36,6 @@ RUN apt-get update && apt-get install -y --fix-missing \
     git \
     supervisor \
     gettext-base \
-    xfce4 \
-    xfce4-terminal \
     xvfb \
     dbus-x11 \
     fonts-wqy-zenhei \
@@ -58,19 +56,9 @@ RUN apt-get update && apt-get install -y --fix-missing \
     libasound2 \
     fonts-liberation \
     libu2f-udev \
-    poppler-utils \
-    qpdf \
-    libreoffice \
-    pandoc \
-    tesseract-ocr \
-    ffmpeg \
   && sed -i 's/^CHROMIUM_FLAGS=""/CHROMIUM_FLAGS="--no-sandbox"/' /usr/bin/chromium \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
-
-# Install Node.js packages for docx and pptx skills
-RUN npm install -g docx pptxgenjs \
-  && npm cache clean --force
 
 # Playwright: use system Chromium (already installed above).
 ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium
@@ -88,14 +76,7 @@ COPY pyproject.toml setup.py README.md ./
 COPY src ./src
 # Inject console dist from build stage (repo does not commit dist).
 COPY --from=console-builder /app/console/dist/ ./src/qwenpaw/console/
-RUN pip install --no-cache-dir \
-    .[ollama,whisper] \
-    pypdf \
-    pdfplumber \
-    reportlab \
-    markitdown[pptx] \
-    pytesseract \
-    pdf2image
+RUN pip install --no-cache-dir .[ollama]
 
 # Init working dir with default config.json and HEARTBEAT.md (build time).
 RUN qwenpaw init --defaults --accept-security
