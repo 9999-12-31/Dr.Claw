@@ -70,6 +70,20 @@ RUN apt-get update && apt-get install -y --fix-missing \
 
 RUN sed -i 's/^CHROMIUM_FLAGS=""/CHROMIUM_FLAGS="--no-sandbox"/' /usr/bin/chromium
 
+# Install system dependencies for PDF and Office skills
+RUN apt-get update && apt-get install -y --fix-missing \
+    poppler-utils \
+    qpdf \
+    libreoffice \
+    pandoc \
+    tesseract-ocr \
+    ffmpeg \
+  && rm -rf /var/lib/apt/lists/* \
+  && apt-get clean
+
+# Install Node.js packages for docx and pptx skills
+RUN npm install -g docx pptxgenjs
+
 # Playwright: use system Chromium (already installed above).
 ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium
 # Avoid Playwright downloading its own browser when executable_path is used.
@@ -86,7 +100,14 @@ COPY pyproject.toml setup.py README.md ./
 COPY src ./src
 # Inject console dist from build stage (repo does not commit dist).
 COPY --from=console-builder /app/console/dist/ ./src/qwenpaw/console/
-RUN pip install --no-cache-dir .[ollama]
+RUN pip install --no-cache-dir .[ollama,llamacpp,whisper] \
+ && pip install --no-cache-dir \
+    pypdf \
+    pdfplumber \
+    reportlab \
+    markitdown[pptx] \
+    pytesseract \
+    pdf2image
 
 # Init working dir with default config.json and HEARTBEAT.md (build time).
 RUN qwenpaw init --defaults --accept-security
