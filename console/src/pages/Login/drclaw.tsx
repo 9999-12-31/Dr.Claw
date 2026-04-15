@@ -21,7 +21,7 @@ style.textContent = `
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
-  
+
   @keyframes float-img {
     0% { transform: translateY(0px); }
     100% { transform: translateY(-12px); }
