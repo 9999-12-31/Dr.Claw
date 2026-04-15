@@ -13,6 +13,8 @@ import lmstudio from "@/assets/providers/lmstudio.png";
 import siliconflow from "@/assets/providers/siliconflow.png";
 import qwenpawLocal from "@/assets/providers/qwenpaw-local.png";
 import zhipu from "@/assets/providers/zhipu.png";
+import openrouter from "@/assets/providers/openrouter.png";
+import opencode from "@/assets/providers/opencode.png";
 import defaultProvider from "@/assets/providers/default-provider.jpg";
 
 export const providerIcon = (provider: string) => {
@@ -52,11 +54,11 @@ export const providerIcon = (provider: string) => {
     case "zhipu-intl":
     case "zhipu-cn-codingplan":
     case "zhipu-intl-codingplan":
-      return "https://img.alicdn.com/imgextra/i2/O1CN01TFZcQz23xX7qacIEv_!!6000000007322-2-tps-640-640.png";
+      return zhipu;
     case "openrouter":
-      return "https://gw.alicdn.com/imgextra/i4/O1CN01oX74jS1ciQR9xBtZ2_!!6000000003634-2-tps-252-252.png";
+      return openrouter;
     case "opencode":
-      return "https://gw.alicdn.com/imgextra/i1/O1CN01d3RfoB28G5dbN4i97_!!6000000007904-2-tps-30-30.png";
+      return opencode;
     default:
       return defaultProvider;
   }
