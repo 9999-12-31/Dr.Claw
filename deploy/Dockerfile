@@ -27,15 +27,14 @@ ENV QWENPAW_ENABLED_CHANNELS=${QWENPAW_ENABLED_CHANNELS}
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y --fix-missing \
-    curl  \
-    python3  \
-    python3-pip  \
+    curl \
+    python3 \
+    python3-pip \
     python3-venv \
-    build-essential  \
-    libssl-dev  \
-    git  \
-    supervisor  \
-    vim  \
+    build-essential \
+    libssl-dev \
+    git \
+    supervisor \
     gettext-base \
     xfce4 \
     xfce4-terminal \
@@ -43,11 +42,6 @@ RUN apt-get update && apt-get install -y --fix-missing \
     dbus-x11 \
     fonts-wqy-zenhei \
     fonts-wqy-microhei \
-  && rm -rf /var/lib/apt/lists/* \
-  && apt-get clean
-
-
-RUN apt-get update && apt-get install -y --fix-missing \
     chromium \
     chromium-sandbox \
     libx11-xcb1 \
@@ -64,25 +58,19 @@ RUN apt-get update && apt-get install -y --fix-missing \
     libasound2 \
     fonts-liberation \
     libu2f-udev \
-  && rm -rf /var/lib/apt/lists/* \
-  && apt-get clean
-
-
-RUN sed -i 's/^CHROMIUM_FLAGS=""/CHROMIUM_FLAGS="--no-sandbox"/' /usr/bin/chromium
-
-# Install system dependencies for PDF and Office skills
-RUN apt-get update && apt-get install -y --fix-missing \
     poppler-utils \
     qpdf \
     libreoffice \
     pandoc \
     tesseract-ocr \
     ffmpeg \
+  && sed -i 's/^CHROMIUM_FLAGS=""/CHROMIUM_FLAGS="--no-sandbox"/' /usr/bin/chromium \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
 # Install Node.js packages for docx and pptx skills
-RUN npm install -g docx pptxgenjs
+RUN npm install -g docx pptxgenjs \
+  && npm cache clean --force
 
 # Playwright: use system Chromium (already installed above).
 ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium
@@ -100,8 +88,8 @@ COPY pyproject.toml setup.py README.md ./
 COPY src ./src
 # Inject console dist from build stage (repo does not commit dist).
 COPY --from=console-builder /app/console/dist/ ./src/qwenpaw/console/
-RUN pip install --no-cache-dir .[ollama,llamacpp,whisper] \
- && pip install --no-cache-dir \
+RUN pip install --no-cache-dir \
+    .[ollama,llamacpp,whisper] \
     pypdf \
     pdfplumber \
     reportlab \
