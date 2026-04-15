@@ -114,10 +114,7 @@ WORKDIR ${WORKSPACE_DIR}
 COPY --from=python-builder /app/venv /app/venv
 ENV PATH="/app/venv/bin:$PATH"
 
-# Copy application files
-COPY pyproject.toml setup.py README.md ./
-COPY src ./src
-COPY --from=console-builder /app/console/dist/ ./src/qwenpaw/console/
+WORKDIR ${WORKSPACE_DIR}
 
 # Init working dir with default config.json and HEARTBEAT.md (build time).
 RUN qwenpaw init --defaults --accept-security
