@@ -64,7 +64,7 @@ class CreateAgentRequest(BaseModel):
     name: str
     description: str = ""
     workspace_dir: str | None = None
-    language: str = "en"
+    language: str = "zh"
     skill_names: list[str] | None = None
 
     @field_validator("workspace_dir", mode="before")
