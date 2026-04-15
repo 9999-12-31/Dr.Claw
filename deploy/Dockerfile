@@ -43,6 +43,12 @@ RUN apt-get update && apt-get install -y --fix-missing \
     dbus-x11 \
     fonts-wqy-zenhei \
     fonts-wqy-microhei \
+    poppler-utils \
+    qpdf \
+    libreoffice \
+    pandoc \
+    tesseract-ocr \
+    ffmpeg \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
@@ -82,11 +88,22 @@ WORKDIR ${WORKSPACE_DIR}
 RUN python3 -m venv venv
 ENV PATH="/app/venv/bin:$PATH"
 
+# Install Node.js packages for docx and pptx skills
+RUN npm install -g docx pptxgenjs
+
 COPY pyproject.toml setup.py README.md ./
 COPY src ./src
 # Inject console dist from build stage (repo does not commit dist).
 COPY --from=console-builder /app/console/dist/ ./src/qwenpaw/console/
-RUN pip install --no-cache-dir .[ollama]
+RUN pip install --no-cache-dir \
+    .[ollama] \
+    pypdf \
+    pdfplumber \
+    reportlab \
+    markitdown[pptx] \
+    pytesseract \
+    pdf2image \
+    Pillow
 
 # Init working dir with default config.json and HEARTBEAT.md (build time).
 RUN qwenpaw init --defaults --accept-security
