@@ -49,8 +49,6 @@ RUN apt-get update && apt-get install -y --fix-missing \
     # Office 文档处理
     libreoffice \
     pandoc \
-    # 邮件客户端
-    himalaya \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
