@@ -43,6 +43,14 @@ RUN apt-get update && apt-get install -y --fix-missing \
     dbus-x11 \
     fonts-wqy-zenhei \
     fonts-wqy-microhei \
+    # PDF 处理工具
+    poppler-utils \
+    qpdf \
+    # Office 文档处理
+    libreoffice \
+    pandoc \
+    # 邮件客户端
+    himalaya \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
@@ -69,6 +77,9 @@ RUN apt-get update && apt-get install -y --fix-missing \
 
 
 RUN sed -i 's/^CHROMIUM_FLAGS=""/CHROMIUM_FLAGS="--no-sandbox"/' /usr/bin/chromium
+
+# 安装 Node.js 依赖
+RUN npm install -g docx pptxgenjs
 
 # Playwright: use system Chromium (already installed above).
 ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium
