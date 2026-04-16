@@ -7,41 +7,7 @@ COPY console /app/console
 RUN cd /app/console && npm ci --include=dev && npm run build
 
 # -----------------------------------------------------------------------------
-# Stage 2: build Python dependencies
-# -----------------------------------------------------------------------------
-FROM agentscope-registry.ap-southeast-1.cr.aliyuncs.com/agentscope/node:slim AS python-builder
-
-ARG DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3 \
-    python3-pip \
-    python3-venv \
-    build-essential \
-    libssl-dev \
-  && rm -rf /var/lib/apt/lists/* \
-  && apt-get clean
-
-WORKDIR /app
-RUN python3 -m venv venv
-ENV PATH="/app/venv/bin:$PATH"
-
-COPY pyproject.toml setup.py README.md ./
-COPY src ./src
-COPY --from=console-builder /app/console/dist/ ./src/qwenpaw/console/
-
-RUN pip install --no-cache-dir \
-    .[ollama] \
-    pypdf \
-    pdfplumber \
-    reportlab \
-    markitdown[pptx] \
-    pytesseract \
-    pdf2image \
-    Pillow
-
-# -----------------------------------------------------------------------------
-# Stage 3: runtime image with minimal dependencies
+# Stage 2: runtime image with Python, Chromium, and app.
 # -----------------------------------------------------------------------------
 FROM agentscope-registry.ap-southeast-1.cr.aliyuncs.com/agentscope/node:slim
 
@@ -60,10 +26,16 @@ ENV QWENPAW_ENABLED_CHANNELS=${QWENPAW_ENABLED_CHANNELS}
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    python3 \
-    supervisor \
+RUN apt-get update && apt-get install -y --fix-missing \
+    curl  \
+    python3  \
+    python3-pip  \
+    python3-venv \
+    build-essential  \
+    libssl-dev  \
+    git  \
+    supervisor  \
+    vim  \
     gettext-base \
     xfce4 \
     xfce4-terminal \
@@ -71,12 +43,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     dbus-x11 \
     fonts-wqy-zenhei \
     fonts-wqy-microhei \
-    poppler-utils \
-    qpdf \
-    libreoffice \
-    pandoc \
-    tesseract-ocr \
-    ffmpeg \
+  && rm -rf /var/lib/apt/lists/* \
+  && apt-get clean
+
+
+RUN apt-get update && apt-get install -y --fix-missing \
     chromium \
     chromium-sandbox \
     libx11-xcb1 \
@@ -93,13 +64,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libasound2 \
     fonts-liberation \
     libu2f-udev \
-  && sed -i 's/^CHROMIUM_FLAGS=""/CHROMIUM_FLAGS="--no-sandbox"/' /usr/bin/chromium \
   && rm -rf /var/lib/apt/lists/* \
   && apt-get clean
 
-# Install Node.js packages for docx and pptx skills
-RUN npm install -g docx pptxgenjs \
-  && npm cache clean --force
+
+RUN sed -i 's/^CHROMIUM_FLAGS=""/CHROMIUM_FLAGS="--no-sandbox"/' /usr/bin/chromium
 
 # Playwright: use system Chromium (already installed above).
 ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium
@@ -110,9 +79,14 @@ ENV QWENPAW_RUNNING_IN_CONTAINER=1
 
 WORKDIR ${WORKSPACE_DIR}
 
-# Copy Python virtual environment from builder stage
-COPY --from=python-builder /app/venv /app/venv
+RUN python3 -m venv venv
 ENV PATH="/app/venv/bin:$PATH"
+
+COPY pyproject.toml setup.py README.md ./
+COPY src ./src
+# Inject console dist from build stage (repo does not commit dist).
+COPY --from=console-builder /app/console/dist/ ./src/qwenpaw/console/
+RUN pip install --no-cache-dir .[ollama]
 
 # Init working dir with default config.json and HEARTBEAT.md (build time).
 RUN qwenpaw init --defaults --accept-security
