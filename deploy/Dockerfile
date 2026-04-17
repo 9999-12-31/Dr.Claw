@@ -78,6 +78,8 @@ RUN sed -i 's/^CHROMIUM_FLAGS=""/CHROMIUM_FLAGS="--no-sandbox"/' /usr/bin/chromi
 
 # 安装 Node.js 依赖
 RUN npm install -g docx pptxgenjs
+# 设置 NODE_PATH 使 Node.js 能找到全局安装的模块
+ENV NODE_PATH=/usr/local/lib/node_modules
 
 # Playwright: use system Chromium (already installed above).
 ENV PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium
