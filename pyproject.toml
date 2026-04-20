@@ -54,6 +54,7 @@ dependencies = [
     "pdf2image>=1.16.3",
     # anyio 4.13.0: _deliver_cancellation busy-loop / getpid storm (QwenPaw#2632)
     "anyio>=4.0.0,<4.13.0",
+    "agent-client-protocol>=0.9.0",
 ]
 
 [tool.setuptools.dynamic]
@@ -99,23 +100,11 @@ dev = [
 local = [
     "huggingface_hub>=0.20.0",
 ]
-llamacpp = [
-    "qwenpaw[local]",
-    "llama-cpp-python>=0.3.0",
-]
-mlx = [
-    "qwenpaw[local]",
-    "mlx-lm>=0.10.0; sys_platform == 'darwin'",
-]
-ollama = [
-    "ollama>=0.6.1",
-]
 whisper = [
     "openai-whisper>=20231117",
 ]
 full = [
-    "qwenpaw[local,ollama,llamacpp,whisper]",
-    "mlx-lm>=0.10.0; sys_platform == 'darwin'",
+    "qwenpaw[local,whisper]",
 ]
 
 [tool.pytest.ini_options]
