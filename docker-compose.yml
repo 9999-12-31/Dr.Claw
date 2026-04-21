@@ -1,3 +1,13 @@
+version: '3.8'
+
+volumes:
+  qwenpaw-data:
+    name: qwenpaw-data
+  qwenpaw-secrets:
+    name: qwenpaw-secrets
+  qwenpaw-backups:
+    name: qwenpaw-backups
+
 services:
   drclaw:
     image: ${REGISTRY:-ghcr.io/9999-12-31}/drclaw:latest
@@ -13,5 +23,6 @@ services:
       - QWENPAW_WORKING_DIR=/app/working
       - QWENPAW_SECRET_DIR=/app/working.secret
     volumes:
-      - ./data:/app/working
-      - ./secrets:/app/working.secret
+      - qwenpaw-data:/app/working
+      - qwenpaw-secrets:/app/working.secret
+      - qwenpaw-backups:/app/working.backups

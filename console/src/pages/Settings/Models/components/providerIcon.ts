@@ -22,6 +22,7 @@ export const providerIcon = (provider: string) => {
     case "modelscope":
       return modelscope;
     case "aliyun-codingplan":
+    case "aliyun-codingplan-intl":
       return aliyunCodingplan;
     case "deepseek":
       return deepseek;
