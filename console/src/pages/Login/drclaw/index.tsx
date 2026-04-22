@@ -2,16 +2,16 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { Form } from "antd";
-import { useAppMessage } from "../../hooks/useAppMessage";
+import { useAppMessage } from "../../../hooks/useAppMessage";
 import {
   LockOutlined,
   UserOutlined,
   EyeOutlined,
   EyeInvisibleOutlined,
 } from "@ant-design/icons";
-import { authApi } from "../../api/modules/auth";
-import { setAuthToken, setUsername } from "../../api/config";
-import { useTheme } from "../../contexts/ThemeContext";
+import { authApi } from "../../../api/modules/auth";
+import { setAuthToken, setUsername } from "../../../api/config";
+import { useTheme } from "../../../contexts/ThemeContext";
 import loginImage from "@/assets/images/login.png";
 
 // 添加加载动画和浮动动画样式
