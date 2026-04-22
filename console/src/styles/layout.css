@@ -226,6 +226,12 @@ html.dark-mode .ant-checkbox-checked .ant-checkbox-inner {
   border-color: #2657c9 !important;
 }
 
+/* Switch checked - white handle in dark mode */
+html.dark-mode .qwenpaw-switch-checked .qwenpaw-switch-handle::before,
+html.dark-mode .ant-switch-checked .ant-switch-handle::before {
+  background-color: #fff !important;
+}
+
 /* Page titles (h1) */
 html.dark-mode h1,
 html.dark-mode h2,
