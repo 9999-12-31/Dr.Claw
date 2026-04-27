@@ -182,30 +182,15 @@ export function registerHostModules(): void {
   moduleRegistry.register("Agent/ACP/components/ACPCard", __mod0__);
   moduleRegistry.register("Agent/ACP/components/ACPDrawer", __mod1__);
   moduleRegistry.register("Agent/ACP/index", __mod2__);
-  moduleRegistry.register(
-    "Agent/Config/components/ContextCompactCard",
-    __mod3__,
-  );
-  moduleRegistry.register(
-    "Agent/Config/components/EmbeddingConfigCard",
-    __mod4__,
-  );
+  moduleRegistry.register("Agent/Config/components/ContextCompactCard", __mod3__);
+  moduleRegistry.register("Agent/Config/components/EmbeddingConfigCard", __mod4__);
   moduleRegistry.register("Agent/Config/components/index", __mod5__);
-  moduleRegistry.register(
-    "Agent/Config/components/LlmRateLimiterCard",
-    __mod6__,
-  );
+  moduleRegistry.register("Agent/Config/components/LlmRateLimiterCard", __mod6__);
   moduleRegistry.register("Agent/Config/components/LlmRetryCard", __mod7__);
-  moduleRegistry.register(
-    "Agent/Config/components/MemorySummaryCard",
-    __mod8__,
-  );
+  moduleRegistry.register("Agent/Config/components/MemorySummaryCard", __mod8__);
   moduleRegistry.register("Agent/Config/components/ReactAgentCard", __mod9__);
   moduleRegistry.register("Agent/Config/components/SliderWithValue", __mod10__);
-  moduleRegistry.register(
-    "Agent/Config/components/ToolResultCompactCard",
-    __mod11__,
-  );
+  moduleRegistry.register("Agent/Config/components/ToolResultCompactCard", __mod11__);
   moduleRegistry.register("Agent/Config/index", __mod12__);
   moduleRegistry.register("Agent/Config/useAgentConfig", __mod13__);
   moduleRegistry.register("Agent/MCP/components/index", __mod14__);
@@ -215,23 +200,14 @@ export function registerHostModules(): void {
   moduleRegistry.register("Agent/Skills/components/HeaderActions", __mod18__);
   moduleRegistry.register("Agent/Skills/components/ImportHubModal", __mod19__);
   moduleRegistry.register("Agent/Skills/components/index", __mod20__);
-  moduleRegistry.register(
-    "Agent/Skills/components/PoolTransferModal",
-    __mod21__,
-  );
+  moduleRegistry.register("Agent/Skills/components/PoolTransferModal", __mod21__);
   moduleRegistry.register("Agent/Skills/components/SkillCard", __mod22__);
   moduleRegistry.register("Agent/Skills/components/SkillDrawer", __mod23__);
-  moduleRegistry.register(
-    "Agent/Skills/components/SkillFilterDropdown",
-    __mod24__,
-  );
+  moduleRegistry.register("Agent/Skills/components/SkillFilterDropdown", __mod24__);
   moduleRegistry.register("Agent/Skills/components/SkillListItem", __mod25__);
   moduleRegistry.register("Agent/Skills/components/skillMetadata", __mod26__);
   moduleRegistry.register("Agent/Skills/components/SkillsToolbar", __mod27__);
-  moduleRegistry.register(
-    "Agent/Skills/components/useConflictRenameModal",
-    __mod28__,
-  );
+  moduleRegistry.register("Agent/Skills/components/useConflictRenameModal", __mod28__);
   moduleRegistry.register("Agent/Skills/index", __mod29__);
   moduleRegistry.register("Agent/Skills/useSkillFilter", __mod30__);
   moduleRegistry.register("Agent/Skills/useSkills", __mod31__);
@@ -240,25 +216,16 @@ export function registerHostModules(): void {
   moduleRegistry.register("Agent/Tools/useTools", __mod34__);
   moduleRegistry.register("Agent/Workspace/components/FileEditor", __mod35__);
   moduleRegistry.register("Agent/Workspace/components/FileItem", __mod36__);
-  moduleRegistry.register(
-    "Agent/Workspace/components/FileListPanel",
-    __mod37__,
-  );
+  moduleRegistry.register("Agent/Workspace/components/FileListPanel", __mod37__);
   moduleRegistry.register("Agent/Workspace/components/index", __mod38__);
-  moduleRegistry.register(
-    "Agent/Workspace/components/useAgentsData",
-    __mod39__,
-  );
+  moduleRegistry.register("Agent/Workspace/components/useAgentsData", __mod39__);
   moduleRegistry.register("Agent/Workspace/components/utils", __mod40__);
   moduleRegistry.register("Agent/Workspace/index", __mod41__);
   moduleRegistry.register("Chat/components/ChatActionGroup/index", __mod42__);
   moduleRegistry.register("Chat/components/ChatHeaderTitle/index", __mod43__);
   moduleRegistry.register("Chat/components/ChatSearchPanel/index", __mod44__);
   moduleRegistry.register("Chat/components/ChatSessionDrawer/index", __mod45__);
-  moduleRegistry.register(
-    "Chat/components/ChatSessionInitializer/index",
-    __mod46__,
-  );
+  moduleRegistry.register("Chat/components/ChatSessionInitializer/index", __mod46__);
   moduleRegistry.register("Chat/components/ChatSessionItem/index", __mod47__);
   moduleRegistry.register("Chat/index", __mod48__);
   moduleRegistry.register("Chat/ModelSelector/index", __mod49__);
@@ -266,20 +233,11 @@ export function registerHostModules(): void {
   moduleRegistry.register("Chat/sessionApi/index", __mod51__);
   moduleRegistry.register("Chat/utils", __mod52__);
   moduleRegistry.register("Control/Channels/components/ChannelCard", __mod53__);
-  moduleRegistry.register(
-    "Control/Channels/components/ChannelDrawer",
-    __mod54__,
-  );
-  moduleRegistry.register(
-    "Control/Channels/components/channelIcons",
-    __mod55__,
-  );
+  moduleRegistry.register("Control/Channels/components/ChannelDrawer", __mod54__);
+  moduleRegistry.register("Control/Channels/components/channelIcons", __mod55__);
   moduleRegistry.register("Control/Channels/components/constants", __mod56__);
   moduleRegistry.register("Control/Channels/components/index", __mod57__);
-  moduleRegistry.register(
-    "Control/Channels/components/useChannelQrcode",
-    __mod58__,
-  );
+  moduleRegistry.register("Control/Channels/components/useChannelQrcode", __mod58__);
   moduleRegistry.register("Control/Channels/index", __mod59__);
   moduleRegistry.register("Control/Channels/useChannels", __mod60__);
   moduleRegistry.register("Control/CronJobs/components/columns", __mod61__);
@@ -295,10 +253,7 @@ export function registerHostModules(): void {
   moduleRegistry.register("Control/Sessions/components/constants", __mod71__);
   moduleRegistry.register("Control/Sessions/components/FilterBar", __mod72__);
   moduleRegistry.register("Control/Sessions/components/index", __mod73__);
-  moduleRegistry.register(
-    "Control/Sessions/components/SessionDrawer",
-    __mod74__,
-  );
+  moduleRegistry.register("Control/Sessions/components/SessionDrawer", __mod74__);
   moduleRegistry.register("Control/Sessions/index", __mod75__);
   moduleRegistry.register("Control/Sessions/useSessions", __mod76__);
   moduleRegistry.register("Login/drclaw/index", __mod77__);
@@ -306,243 +261,93 @@ export function registerHostModules(): void {
   moduleRegistry.register("Settings/Agents/components/AgentModal", __mod79__);
   moduleRegistry.register("Settings/Agents/components/AgentTable", __mod80__);
   moduleRegistry.register("Settings/Agents/components/index", __mod81__);
-  moduleRegistry.register(
-    "Settings/Agents/components/SortableAgentRow",
-    __mod82__,
-  );
+  moduleRegistry.register("Settings/Agents/components/SortableAgentRow", __mod82__);
   moduleRegistry.register("Settings/Agents/index", __mod83__);
   moduleRegistry.register("Settings/Agents/reorder", __mod84__);
   moduleRegistry.register("Settings/Agents/useAgents", __mod85__);
   moduleRegistry.register("Settings/AgentStats/index", __mod86__);
   moduleRegistry.register("Settings/AgentStats/SummaryCard", __mod87__);
-  moduleRegistry.register(
-    "Settings/Backups/create/AgentMultiSelect",
-    __mod88__,
-  );
+  moduleRegistry.register("Settings/Backups/create/AgentMultiSelect", __mod88__);
   moduleRegistry.register("Settings/Backups/create/BackupProgress", __mod89__);
   moduleRegistry.register("Settings/Backups/create/BackupScopeForm", __mod90__);
-  moduleRegistry.register(
-    "Settings/Backups/create/CreateBackupModal",
-    __mod91__,
-  );
-  moduleRegistry.register(
-    "Settings/Backups/create/SilentBackupModal",
-    __mod92__,
-  );
+  moduleRegistry.register("Settings/Backups/create/CreateBackupModal", __mod91__);
+  moduleRegistry.register("Settings/Backups/create/SilentBackupModal", __mod92__);
   moduleRegistry.register("Settings/Backups/import/ImportButton", __mod93__);
-  moduleRegistry.register(
-    "Settings/Backups/import/ImportConflictModal",
-    __mod94__,
-  );
+  moduleRegistry.register("Settings/Backups/import/ImportConflictModal", __mod94__);
   moduleRegistry.register("Settings/Backups/import/useImportFlow", __mod95__);
   moduleRegistry.register("Settings/Backups/index", __mod96__);
   moduleRegistry.register("Settings/Backups/list/BackupTable", __mod97__);
   moduleRegistry.register("Settings/Backups/list/BackupToolbar", __mod98__);
   moduleRegistry.register("Settings/Backups/list/ScopeTags", __mod99__);
-  moduleRegistry.register(
-    "Settings/Backups/restore/PreRestoreConfirmModal",
-    __mod100__,
-  );
-  moduleRegistry.register(
-    "Settings/Backups/restore/RestoreAgentTable",
-    __mod101__,
-  );
-  moduleRegistry.register(
-    "Settings/Backups/restore/RestoreBackupModal",
-    __mod102__,
-  );
-  moduleRegistry.register(
-    "Settings/Backups/restore/useRestoreFlow",
-    __mod103__,
-  );
+  moduleRegistry.register("Settings/Backups/restore/PreRestoreConfirmModal", __mod100__);
+  moduleRegistry.register("Settings/Backups/restore/RestoreAgentTable", __mod101__);
+  moduleRegistry.register("Settings/Backups/restore/RestoreBackupModal", __mod102__);
+  moduleRegistry.register("Settings/Backups/restore/useRestoreFlow", __mod103__);
   moduleRegistry.register("Settings/Backups/shared/progress", __mod104__);
   moduleRegistry.register("Settings/Backups/shared/scope", __mod105__);
-  moduleRegistry.register(
-    "Settings/Backups/shared/useBackupRunner",
-    __mod106__,
-  );
+  moduleRegistry.register("Settings/Backups/shared/useBackupRunner", __mod106__);
   moduleRegistry.register("Settings/Debug/components/index", __mod107__);
   moduleRegistry.register("Settings/Debug/components/LogViewer", __mod108__);
   moduleRegistry.register("Settings/Debug/index", __mod109__);
   moduleRegistry.register("Settings/Debug/useDebugLogs", __mod110__);
-  moduleRegistry.register(
-    "Settings/Environments/components/AddButton",
-    __mod111__,
-  );
-  moduleRegistry.register(
-    "Settings/Environments/components/EmptyState",
-    __mod112__,
-  );
-  moduleRegistry.register(
-    "Settings/Environments/components/EnvRow",
-    __mod113__,
-  );
+  moduleRegistry.register("Settings/Environments/components/AddButton", __mod111__);
+  moduleRegistry.register("Settings/Environments/components/EmptyState", __mod112__);
+  moduleRegistry.register("Settings/Environments/components/EnvRow", __mod113__);
   moduleRegistry.register("Settings/Environments/components/index", __mod114__);
-  moduleRegistry.register(
-    "Settings/Environments/components/Toolbar",
-    __mod115__,
-  );
+  moduleRegistry.register("Settings/Environments/components/Toolbar", __mod115__);
   moduleRegistry.register("Settings/Environments/index", __mod116__);
   moduleRegistry.register("Settings/Environments/useEnvVars", __mod117__);
   moduleRegistry.register("Settings/Models/components/cards/index", __mod118__);
-  moduleRegistry.register(
-    "Settings/Models/components/cards/LocalProviderCard",
-    __mod119__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/cards/ProviderCard",
-    __mod120__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/cards/RemoteProviderCard",
-    __mod121__,
-  );
+  moduleRegistry.register("Settings/Models/components/cards/LocalProviderCard", __mod119__);
+  moduleRegistry.register("Settings/Models/components/cards/ProviderCard", __mod120__);
+  moduleRegistry.register("Settings/Models/components/cards/RemoteProviderCard", __mod121__);
   moduleRegistry.register("Settings/Models/components/index", __mod122__);
-  moduleRegistry.register(
-    "Settings/Models/components/modals/CustomProviderModal",
-    __mod123__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/index",
-    __mod124__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/JsonConfigEditor",
-    __mod125__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/local-models/LocalModelRow",
-    __mod126__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/local-models/LocalRuntimePanel",
-    __mod127__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/local-models/shared",
-    __mod128__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/LocalModelManageModal",
-    __mod129__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/ModelManageModal",
-    __mod130__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/OpenRouterFilterSection",
-    __mod131__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/ProviderConfigModal",
-    __mod132__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/RemoteModelManageModal",
-    __mod133__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/modals/testConnectionMessage",
-    __mod134__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/providerIcon",
-    __mod135__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/sections/index",
-    __mod136__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/sections/LoadingState",
-    __mod137__,
-  );
-  moduleRegistry.register(
-    "Settings/Models/components/sections/ModelsSection",
-    __mod138__,
-  );
+  moduleRegistry.register("Settings/Models/components/modals/CustomProviderModal", __mod123__);
+  moduleRegistry.register("Settings/Models/components/modals/index", __mod124__);
+  moduleRegistry.register("Settings/Models/components/modals/JsonConfigEditor", __mod125__);
+  moduleRegistry.register("Settings/Models/components/modals/local-models/LocalModelRow", __mod126__);
+  moduleRegistry.register("Settings/Models/components/modals/local-models/LocalRuntimePanel", __mod127__);
+  moduleRegistry.register("Settings/Models/components/modals/local-models/shared", __mod128__);
+  moduleRegistry.register("Settings/Models/components/modals/LocalModelManageModal", __mod129__);
+  moduleRegistry.register("Settings/Models/components/modals/ModelManageModal", __mod130__);
+  moduleRegistry.register("Settings/Models/components/modals/OpenRouterFilterSection", __mod131__);
+  moduleRegistry.register("Settings/Models/components/modals/ProviderConfigModal", __mod132__);
+  moduleRegistry.register("Settings/Models/components/modals/RemoteModelManageModal", __mod133__);
+  moduleRegistry.register("Settings/Models/components/modals/testConnectionMessage", __mod134__);
+  moduleRegistry.register("Settings/Models/components/providerIcon", __mod135__);
+  moduleRegistry.register("Settings/Models/components/sections/index", __mod136__);
+  moduleRegistry.register("Settings/Models/components/sections/LoadingState", __mod137__);
+  moduleRegistry.register("Settings/Models/components/sections/ModelsSection", __mod138__);
   moduleRegistry.register("Settings/Models/index", __mod139__);
   moduleRegistry.register("Settings/Models/useProviders", __mod140__);
-  moduleRegistry.register(
-    "Settings/Security/components/FileGuardSection",
-    __mod141__,
-  );
+  moduleRegistry.register("Settings/Security/components/FileGuardSection", __mod141__);
   moduleRegistry.register("Settings/Security/components/index", __mod142__);
-  moduleRegistry.register(
-    "Settings/Security/components/PreviewModal",
-    __mod143__,
-  );
+  moduleRegistry.register("Settings/Security/components/PreviewModal", __mod143__);
   moduleRegistry.register("Settings/Security/components/RuleModal", __mod144__);
   moduleRegistry.register("Settings/Security/components/RuleTable", __mod145__);
-  moduleRegistry.register(
-    "Settings/Security/components/SkillScannerSection",
-    __mod146__,
-  );
+  moduleRegistry.register("Settings/Security/components/SkillScannerSection", __mod146__);
   moduleRegistry.register("Settings/Security/index", __mod147__);
   moduleRegistry.register("Settings/Security/useSkillScanner", __mod148__);
   moduleRegistry.register("Settings/Security/useToolGuard", __mod149__);
   moduleRegistry.register("Settings/SkillPool/builtinNotice", __mod150__);
-  moduleRegistry.register(
-    "Settings/SkillPool/components/BroadcastModal",
-    __mod151__,
-  );
-  moduleRegistry.register(
-    "Settings/SkillPool/components/ImportBuiltinModal",
-    __mod152__,
-  );
+  moduleRegistry.register("Settings/SkillPool/components/BroadcastModal", __mod151__);
+  moduleRegistry.register("Settings/SkillPool/components/ImportBuiltinModal", __mod152__);
   moduleRegistry.register("Settings/SkillPool/components/index", __mod153__);
-  moduleRegistry.register(
-    "Settings/SkillPool/components/PoolSkillCard",
-    __mod154__,
-  );
-  moduleRegistry.register(
-    "Settings/SkillPool/components/PoolSkillDrawer",
-    __mod155__,
-  );
-  moduleRegistry.register(
-    "Settings/SkillPool/components/PoolSkillListItem",
-    __mod156__,
-  );
-  moduleRegistry.register(
-    "Settings/SkillPool/components/SkillMeta",
-    __mod157__,
-  );
-  moduleRegistry.register(
-    "Settings/SkillPool/components/SkillPoolListItem",
-    __mod158__,
-  );
+  moduleRegistry.register("Settings/SkillPool/components/PoolSkillCard", __mod154__);
+  moduleRegistry.register("Settings/SkillPool/components/PoolSkillDrawer", __mod155__);
+  moduleRegistry.register("Settings/SkillPool/components/PoolSkillListItem", __mod156__);
+  moduleRegistry.register("Settings/SkillPool/components/SkillMeta", __mod157__);
+  moduleRegistry.register("Settings/SkillPool/components/SkillPoolListItem", __mod158__);
   moduleRegistry.register("Settings/SkillPool/index", __mod159__);
   moduleRegistry.register("Settings/SkillPool/useSkillPool", __mod160__);
-  moduleRegistry.register(
-    "Settings/TokenUsage/components/EmptyState",
-    __mod161__,
-  );
+  moduleRegistry.register("Settings/TokenUsage/components/EmptyState", __mod161__);
   moduleRegistry.register("Settings/TokenUsage/components/index", __mod162__);
-  moduleRegistry.register(
-    "Settings/TokenUsage/components/LoadingState",
-    __mod163__,
-  );
+  moduleRegistry.register("Settings/TokenUsage/components/LoadingState", __mod163__);
   moduleRegistry.register("Settings/TokenUsage/index", __mod164__);
-  moduleRegistry.register(
-    "Settings/VoiceTranscription/components/AudioModeCard",
-    __mod165__,
-  );
-  moduleRegistry.register(
-    "Settings/VoiceTranscription/components/index",
-    __mod166__,
-  );
-  moduleRegistry.register(
-    "Settings/VoiceTranscription/components/ProviderSelectCard",
-    __mod167__,
-  );
-  moduleRegistry.register(
-    "Settings/VoiceTranscription/components/ProviderTypeCard",
-    __mod168__,
-  );
+  moduleRegistry.register("Settings/VoiceTranscription/components/AudioModeCard", __mod165__);
+  moduleRegistry.register("Settings/VoiceTranscription/components/index", __mod166__);
+  moduleRegistry.register("Settings/VoiceTranscription/components/ProviderSelectCard", __mod167__);
+  moduleRegistry.register("Settings/VoiceTranscription/components/ProviderTypeCard", __mod168__);
   moduleRegistry.register("Settings/VoiceTranscription/index", __mod169__);
-  moduleRegistry.register(
-    "Settings/VoiceTranscription/useVoiceTranscription",
-    __mod170__,
-  );
+  moduleRegistry.register("Settings/VoiceTranscription/useVoiceTranscription", __mod170__);
 }
